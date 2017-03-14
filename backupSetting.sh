@@ -1,6 +1,6 @@
 #!/bin/bash
 cp ~/.vimrc ./backup/
-cp ~/.bash ./backup/
+cp ~/.bashrc ./backup/
 cp -r ~/.bin ./backup/
 cp -r ~/.vim ./backup/
 cp -r .ssh ./backup/
