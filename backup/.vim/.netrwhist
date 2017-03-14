@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/ailab/blog/_posts'
+let g:netrw_dirhist_2='/home/ailab/sicilyTransTemp'
+let g:netrw_dirhist_3='/home/ailab/blog/_posts'
+let g:netrw_dirhist_4='/home/ailab/ParallelEA/materials'
+let g:netrw_dirhist_5='/home/ailab/GoogleDrive/Academic/MyPaper'
+let g:netrw_dirhist_6='/home/ailab/.vim'
+let g:netrw_dirhist_7='/home/ailab/littlePrograms/leetcode/myAtoi'
+let g:netrw_dirhist_8='/home/ailab/androidProjects/AutoConnectSYSYU'
+let g:netrw_dirhist_9='/home/ailab/learnLinux'

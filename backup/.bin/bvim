@@ -1,0 +1,3 @@
+#!/bin/bash
+f=`ls -a|grep -i $1`
+vim $f

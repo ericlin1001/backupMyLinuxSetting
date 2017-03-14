@@ -1,0 +1,6 @@
+#!/bin/bash
+pdflatex $1 >/dev/null
+file=$1
+fname=${file%.*}
+evince $fname.pdf 
+rm $fname.out $fname.aux $fname.log
