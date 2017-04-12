@@ -14,8 +14,9 @@
 #
 #######################################################################
 # Localhost (DO NOT REMOVE)
-127.0.0.1	localhost
-172.18.219.141 manager
+127.0.0.1	localhost localhost.localdomain
+127.0.0.1	manager.sysu.edu.cn manager
+172.18.219.141 manager.sysu.edu.cn manager
 ::1	localhost ip6-localhost ip6-loopback
 172.18.219.220 middle
 

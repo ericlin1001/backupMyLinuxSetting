@@ -1,10 +1,22 @@
+" For my phone's wireless keyboard.
+" 
+imap !! <Esc> 
+map !! <Esc> 
+imap <F1> <Esc> 
+map <F1> <Esc> 
+map ]] <C-]>
+" Ctrl-C to escape.
+
+
+
+
 "to view all set options
 ":set all  or :browse set
 
 syntax on
 "<F5>`make`
-map <F5> make
-imap <F5> <Esc>make
+map <F5> <Esc>make<CR>
+"imap <F5> <Esc>make<CR>
 "Using make command.
 "map make :w<Enter> :!clear<Enter> :make<Enter>
 map make :w<Enter> :!clear<Enter> :!make<Enter>
@@ -38,7 +50,7 @@ map <C-F12> :!ctags -f .tags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=
 map tags <C-F12> <CR>
 
 "other useful hot-keys.
-map == gg=GG
+map == mtgg=GG'tzz
 map // 0i//<Esc>
 map d/ 02x
 
@@ -103,3 +115,25 @@ au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
 
 "let g:AutoIBUS_disable=1 "disable autoibus
+
+
+" Remapping Caps_Lock to Escape, when entering VIM.
+function! MapCapslockToEscape()
+	let l:a=system("/usr/bin/xmodmap -e \"clear Lock\" -e \"keycode 0x42 = Escape\"")
+endfunction
+
+function! ResetMapCapslock()
+	let l:a=system('xmodmap -e "clear Lock" -e "keycode 0x42 = Caps_Lock"')
+endfunction
+
+"au VimEnter * call MapCapslockToEscape()
+"au VimLeave * call ResetMapCapslock()
+
+map fuck :%s/(DEMO VERSION!)//g<CR>
+imap fuck <Esc>fucka
+
+" set default register as system clipboard.
+set clipboard+=unnamedplus
+set paste
+" go=guioptions, a=autoselect.
+set go+=a

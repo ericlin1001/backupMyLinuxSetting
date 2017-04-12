@@ -1,0 +1,9 @@
+#install4j response file for yEd Graph Editor 3.16.2.1
+#Fri Mar 17 13:31:26 CST 2017
+createDesktopLinkAction$Boolean=true
+sys.programGroupDisabled$Boolean=false
+sys.symlinkDir=/usr/local/bin
+sys.languageId=en
+sys.adminRights$Boolean=false
+sys.installationDir=/home/ailab/.bin/yEd
+createQuicklaunchIconAction$Boolean=false

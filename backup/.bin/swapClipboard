@@ -1,0 +1,22 @@
+#!/bin/bash
+file=$1
+file2=$2
+if [ -z "$file" ]; then
+	echo "Usage: swapClipboard <file1> [file2]";
+	echo "	\`swapClipboard <file1>\` swap content of clipboard with <file1>";
+	echo "	\`swapClipboard <file1> <file2>\` swap content of <file1> with <file2>";
+	exit 0
+fi
+#
+if [ -z "$file2" ]; then 
+echo "Swapping content of File:$file with clipboard..."
+xclip -o -sel clipboard >/tmp/clipboard.txt
+cat $file|xclip -i -sel clipboard
+mv /tmp/clipboard.txt $file
+else
+echo "Swapping content of File:$file and File:$file2..."
+# if file!="" && file2!=""
+cp $file /tmp/swap.txt
+mv $file2 $file
+mv /tmp/swap.txt $file2
+fi

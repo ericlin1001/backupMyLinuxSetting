@@ -174,12 +174,30 @@ alias v="~/.bin/bvim"
 
 #make it run in current shell
 alias c=". ~/.bin/bcd"
+#alias cd=". ~/.bin/cd"
 alias viewtex="~/.bin/viewtex"
 
 # A safe way to delete sth.
 alias th="trash"
 alias del="trash"
 alias rm="echo Use 'del' to move to trash, or the full path i.e. '/bin/rm'"
+alias mkcpp="cp -r ~/littlePrograms/CppTemplate/"
+alias m="~/.bin/mymv"
+# swap the clipboard, with ~/shared/tmp/sharedText.txt
+alias s="swapClipboard ~/shared/tmp/sharedText.txt"
+p(){
+	cp "$1" ~/shared/tmp/sharedText.txt
+}
 
 # ShortCuts notes:
 # Ctrl+Q  -> ~/restartSynergy.sh
+# compress: tar -cvzf
+# extract: tar -xzvf
+export GEM_PATH=/home/ailab/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0
+export GEM_HOME=/home/ailab/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0
+export GEM_SPEC_CACHE=/home/ailab/.rbenv/versions/2.4.0/lib/ruby/gems/specs
+export MY_RUBY_HOME=/home/ailab/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0
+export EDITOR='vim'
+
+export PATH=/home/ailab/.bin/:$GEM_PATH/bin:$GOPATH:$GOPATH/bin:$PATH
+alias trash-restore='restore-trash'
