@@ -7,4 +7,4 @@ cp -r .ssh ./backup/
 cp /etc/hosts ./backup/
 git add .
 git commit -m 'updated by script'
-git push
+git push origin master

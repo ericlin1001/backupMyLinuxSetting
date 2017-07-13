@@ -9,20 +9,20 @@ imap <F5> <Esc>:w<Enter> :!python3 %<Enter>
 
 
 "insert mode,  no remap,  map , --> , 
-inoremap , ,<space>
-inoremap == <space>==<space>
-inoremap != <space>!=<space>
-inoremap = <space>=<space>
-inoremap + <space>+<space>
-inoremap - <space>-<space>
-inoremap * <space>*<space>
-"inoremap / <space>/<space>
-inoremap // //
-inoremap ++ ++
-inoremap -- --
-inoremap ** <space>**<space>
-inoremap += <space>+=<space>
-inoremap -= <space>-=<space>
-inoremap *= <space>*=<space>
-inoremap /= <space>/=<space>
-inoremap -> ->
+"inoremap , ,<space>
+"inoremap == <space>==<space>
+"inoremap != <space>!=<space>
+"inoremap = <space>=<space>
+"inoremap + <space>+<space>
+"inoremap - <space>-<space>
+"inoremap * <space>*<space>
+""inoremap / <space>/<space>
+"inoremap // //
+"inoremap ++ ++
+"inoremap -- --
+"inoremap ** <space>**<space>
+"inoremap += <space>+=<space>
+"inoremap -= <space>-=<space>
+"inoremap *= <space>*=<space>
+"inoremap /= <space>/=<space>
+"inoremap -> ->

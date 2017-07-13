@@ -1,3 +1,4 @@
+execute pathogen#infect()
 " For my phone's wireless keyboard.
 " 
 imap !! <Esc> 
@@ -36,7 +37,7 @@ map <F9> :cw<Enter>
 map <F10> :cn<Enter>
 
 "<F7> toggle functions list
-map <F7> :TlistToggle<CR>
+map <F3> :TlistToggle<CR>
 
 "<F8> Toggle between Header/Source files (.h/.cpp)
 map <F8> :A<CR> 
@@ -96,7 +97,9 @@ let Tlist_File_Fold_Auto_Close=1
 
 
 " configure tags - add additional tags here or comment out not-used ones
-set tags+=~/.vim/tags/cpp,./.tags,
+" set tags+=~/.vim/tags/cpp,./.tags,../.tags,../../.tags,../../../.tags,../../../../.tags
+
+set tags=.tags;
 
 " Configure path to include some paths
 set path+=./include/,/usr/include/mpich/,/usr/include/c++/4.8/,
@@ -134,6 +137,49 @@ imap fuck <Esc>fucka
 
 " set default register as system clipboard.
 set clipboard+=unnamedplus
-set paste
+"set paste
 " go=guioptions, a=autoselect.
 set go+=a
+
+
+" javacomplete
+"autocmd FileType java setlocal omnifunc=javacomplete#Complete
+" autocmd vimenter * NERDTree
+map nerd :NERDTree<CR>
+
+" sudo write
+map sudow :w !sudo tee %<CR><CR>L<CR><CR>
+
+" switch header/source files.
+map <F7> :A<CR>
+set laststatus=2
+
+" verticall center the line in the window: zz
+" <C-D> based on 'scroll', which equals to the half of height of window
+"
+" half-page scroll
+map ,j <C-D>zz
+map ,k <C-U>zz
+
+" jump base on cursor position, used to jump back the prevous position.
+" Ctrl-I : to newer cursor
+" Ctrl-O : to older curosr
+" '' : jump between the last position.
+"
+" Base on tags, used to track the call stack of function.
+" Ctrl-] : to the tag
+" Ctrl-T : to the older tag
+
+" about the movement in text
+" 1. word
+"	w: begining of next word, W: based on white space.
+" 2. back 
+"	b: prvous beginning of wor, B: based on white space
+" 3. ending
+"	e: end of word, E: base on white space
+"
+" round the window:
+" H: the higher line.
+" M: middle line.
+" L: the lower line. 
+"

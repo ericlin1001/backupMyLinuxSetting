@@ -121,7 +121,7 @@ alias fkill='kill -9'
 export GOPATH=$HOME/gopath
 export PATH=$GOPATH:$GOPATH/bin:$PATH
 #alias python=python3
-alias python=ipython3
+#alias python=ipython3
 
 
 ####Github-create()###################
@@ -201,3 +201,10 @@ export EDITOR='vim'
 
 export PATH=/home/ailab/.bin/:$GEM_PATH/bin:$GOPATH:$GOPATH/bin:$PATH
 alias trash-restore='restore-trash'
+
+sf(){
+	find -iname $1 $2
+}
+ss(){
+	grep -rn $1 *
+}
