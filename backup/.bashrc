@@ -208,3 +208,13 @@ sf(){
 ss(){
 	grep -rn $1 *
 }
+
+# start tensorflow virtual env
+. ~/tensorflowEnv/bin/activate
+PS1='(TF) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+
+export PATH="$PATH:$HOME/bin"
+
+
+# scala
+export  PATH=$PATH:$HOME/downloads/scala-2.13.0-M1/bin/

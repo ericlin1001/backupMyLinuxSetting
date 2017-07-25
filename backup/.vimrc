@@ -1,3 +1,6 @@
+"profile start syntastic.log
+"profile! file */syntastic/*
+"
 execute pathogen#infect()
 " For my phone's wireless keyboard.
 " 
@@ -99,7 +102,7 @@ let Tlist_File_Fold_Auto_Close=1
 " configure tags - add additional tags here or comment out not-used ones
 " set tags+=~/.vim/tags/cpp,./.tags,../.tags,../../.tags,../../../.tags,../../../../.tags
 
-set tags=.tags;
+set tags=.tags,tags,
 
 " Configure path to include some paths
 set path+=./include/,/usr/include/mpich/,/usr/include/c++/4.8/,
@@ -183,3 +186,46 @@ map ,k <C-U>zz
 " M: middle line.
 " L: the lower line. 
 "
+map g] ][
+map g[ [m
+map g{ [{
+map g) ])
+map g( [(
+map g} ]}
+
+
+au VimEnter * RainbowParenthesesToggle
+"au Syntax * RainbowParenthesesLoadRound
+"au Syntax * RainbowParenthesesLoadSquare
+"au Syntax * RainbowParenthesesLoadBraces
+au VimEnter * RainbowParenthesesLoadRound
+au VimEnter * RainbowParenthesesLoadSquare
+au VimEnter * RainbowParenthesesLoadBraces
+
+let g:neocomplete#enable_at_startup = 1
+
+syntax on
+
+" zo: open fold
+" zc: close fold
+" zR: open all
+set foldmethod=syntax
+
+" syntastic's related config
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+au VimEnter * SyntasticToggleMode 
+
+" cpp checkers
+let g:syntastic_cpp_checkers = ['gcc']
+let g:syntastic_scala_checkers = ['scalac']
+
+
+" do syntax check.
+map <F4> :SyntasticCheck<CR>
+imap <F4> :SyntasticCheck<CR>
