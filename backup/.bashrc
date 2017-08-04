@@ -209,12 +209,52 @@ ss(){
 	grep -rn $1 *
 }
 
+# move files to trash.
+MoveFileToTrash(){
+	src="$1"
+	if [ ! -f "$src" ]; then
+		echo -e "\e[31m[Error]\e[0m Trash: Can't find file: $src"
+		return;
+	fi
+	trashDir=~/.trash
+	if [ ! -d "$trashDir" ]; then
+		mkdir "$trashDir"
+	fi
+	curTime="`date +%Y-%m-%d-%H:%M:%S1`"
+	filename="`basename $src`"
+	toTrashFile="$trashDir/${filename}_${curTime}"
+	mv "$src" "$toTrashFile"
+}
+trash(){
+	for i in "$@"
+	do
+		MoveFileToTrash "$i"
+	done
+}
+
+alias th='trash'
+
 # start tensorflow virtual env
 . ~/tensorflowEnv/bin/activate
-PS1='(TF) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+#PS1='(TF) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+PS1='(TF) \[\e]0;\u@TestSvr: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@TestSvr\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
 export PATH="$PATH:$HOME/bin"
 
 
 # scala
 export  PATH=$PATH:$HOME/downloads/scala-2.13.0-M1/bin/
+
+
+#enhanced mv, auto create directories when needed.
+#function mv ()
+#{
+#    dir="$2"
+#    tmp="$2"; tmp="${tmp: -1}"
+#    [ "$tmp" != "/" ] && dir="$(dirname "$2")"
+#    [ -a "$dir" ] ||
+#    mkdir -p "$dir" &&
+#    mv "$@"
+#}
+
+alias r='source ~/.bashrc'
